@@ -28,6 +28,24 @@ module.exports = appInfo => {
     database: 'booklink',
   };
 
+  // add jwt config
+  config.jwt = {
+    secret: '123456',
+  };
+
+  // 跨域配置
+  config.cors = {
+    origin: '*',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
+  };
+
+  config.security = {
+    csrf: {
+      enable: false,
+      ignoreJSON: true
+    },
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
