@@ -16,7 +16,11 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1598527295271_1848';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = ['jwtVerify'];
+
+  config.jwtVerify = {
+    match: '/api'
+  };
 
   // add sequelize config
   config.sequelize = {

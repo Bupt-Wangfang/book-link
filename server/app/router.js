@@ -4,11 +4,13 @@
  * @param {Egg.Application} app - egg application
  */
 module.exports = app => {
-  const { router, controller, jwt } = app;
+  const { router, controller } = app;
   router.get('/', controller.home.index);
 
+  const jwt = app.middleware.jwt(app.config.jwt);
+
   // 登录
-  router.post('/login', controller.login.login);
+  router.get('/login', controller.login.login);
 
   // user
   router.get('/user', jwt, controller.user.index);  //根据token查询用户
