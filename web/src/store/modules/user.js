@@ -23,7 +23,7 @@ export default {
     actions: {
         getUserInfo({ commit, state, dispatch }) {
             if(state.isLogin && !state.userId) {
-                return getUserInfo().then(({ code, data }) => {
+                return getUserInfo().then(({data }) => {
                     commit('setUserInfo', data);
                 }).catch(() => {
                     dispatch('clearUserData');
@@ -31,7 +31,7 @@ export default {
             }
         },
         login({ commit }, userInfo) {
-            return login(userInfo).then((code, data) => {
+            return login(userInfo).then((data) => {
                 const token = data.token;
                 if(token) {
                     commit('setLoginState', true);

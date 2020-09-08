@@ -39,7 +39,7 @@ instance.interceptors.response.use(function(response) {
             switch (error.response.status) {
                 case 401: 
                     // 清空
-                    if(!(config.hasOwnProperty('notLogin') && config.notLogin)) {
+                    if(!(Object.prototype.hasOwnProperty.call(config, 'notLogin') && config.notLogin)) {
                         store.dispatch('user/logout');
                     }
                     showErr = false;
