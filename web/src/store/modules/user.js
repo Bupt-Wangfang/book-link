@@ -4,6 +4,7 @@ import { setToken, removeToken } from '@/utils/auth'
 import router from '@/router'
 
 export default {
+    namespaced: true,
     state: {
         isLogin: !!localStorage.getItem('token'),
         userName: '',
