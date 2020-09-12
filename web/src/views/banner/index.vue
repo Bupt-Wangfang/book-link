@@ -1,7 +1,5 @@
 <template>
- <div>
-     Nav
- </div>
+ <div>banner</div>
 </template>
 
 <script>

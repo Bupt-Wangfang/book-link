@@ -7,7 +7,21 @@ const routes = [
     {
         path: '/',
         component: () => import('../views/main'),
-        children: []
+        children: [
+            {
+                path: '',
+                meta: { keepAlive: true },
+                component: () => import('../views/home')
+            },
+            {
+                path: '/detail/:id',
+                component: () => import('../views/detail')
+            },
+            {
+                path: '/banner/:id',
+                component: () => import('../views/banner')
+            },
+        ]
     },
     {
         path: '/login',
